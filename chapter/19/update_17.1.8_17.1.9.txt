@@ -1,0 +1,864 @@
+Using username "root".
+Authenticating with public key "rsa-key-20150323"
+Last login: Sat Jul  8 11:04:52 2017
+----------------------------------------------
+|      Hello, this is OPNsense 17.1          |         @@@@@@@@@@@@@@@
+|                                            |        @@@@         @@@@
+| Website:      https://opnsense.org/        |         @@@\\\   ///@@@
+| Handbook:     https://docs.opnsense.org/   |       ))))))))   ((((((((
+| Forums:       https://forum.opnsense.org/  |         @@@///   \\\@@@
+| Lists:        https://lists.opnsense.org/  |        @@@@         @@@@
+| Code:         https://github.com/opnsense  |         @@@@@@@@@@@@@@@
+----------------------------------------------
+
+  0) Logout                              7) Ping host
+  1) Assign interfaces                   8) Shell
+  2) Set interface IP address            9) pfTop
+  3) Reset the root password            10) Firewall log
+  4) Reset to factory defaults          11) Reload all services
+  5) Power off system                   12) Upgrade from console
+  6) Reboot system                      13) Restore configuration
+
+Enter an option: 12
+
+This will automatically fetch all available updates, apply them,
+and reboot if necessary.
+
+Proceed with this action? [y/N]: y
+
+Updating OPNsense repository catalogue...
+Fetching meta.txz: . done
+Fetching packagesite.txz: .......... done
+Processing entries: .......... done
+OPNsense repository update completed. 381 packages processed.
+All repositories are up to date.
+Updating OPNsense repository catalogue...
+OPNsense repository is up to date.
+All repositories are up to date.
+Checking for upgrades (58 candidates): .......... done
+Processing candidates (58 candidates): ........ done
+The following 46 package(s) will be affected (of 0 checked):
+
+New packages to be INSTALLED:
+        openvpn: 2.4.3
+        liblz4: 1.7.5,1
+
+Installed packages to be UPGRADED:
+        unbound: 1.6.2 -> 1.6.3
+        suricata: 3.2.1 -> 3.2.2
+        sudo: 1.8.20 -> 1.8.20p2_2
+        squid: 3.5.25 -> 3.5.26
+        sqlite3: 3.18.0 -> 3.19.3_1
+        readline: 6.3.8_1 -> 7.0.3
+        python27: 2.7.12_2 -> 2.7.12_4
+        py27-setuptools: 32.1.0_1 -> 36.0.1
+        py27-netaddr: 0.7.18_1 -> 0.7.19
+        php70-zlib: 7.0.19 -> 7.0.20_1
+        php70-xml: 7.0.19 -> 7.0.20_1
+        php70-sqlite3: 7.0.19 -> 7.0.20_1
+        php70-sockets: 7.0.19 -> 7.0.20_1
+        php70-simplexml: 7.0.19 -> 7.0.20_1
+        php70-session: 7.0.19 -> 7.0.20_1
+        php70-pdo: 7.0.19 -> 7.0.20_1
+        php70-openssl: 7.0.19 -> 7.0.20_1
+        php70-mcrypt: 7.0.19 -> 7.0.20_1
+        php70-ldap: 7.0.19 -> 7.0.20_1
+        php70-json: 7.0.19 -> 7.0.20_1
+        php70-hash: 7.0.19 -> 7.0.20_1
+        php70-gettext: 7.0.19 -> 7.0.20_1
+        php70-filter: 7.0.19 -> 7.0.20_1
+        php70-dom: 7.0.19 -> 7.0.20_1
+        php70-curl: 7.0.19 -> 7.0.20_1
+        php70-ctype: 7.0.19 -> 7.0.20_1
+        php70: 7.0.19 -> 7.0.20_1
+        pcre: 8.40 -> 8.40_1
+        opnsense-update: 17.1.7_1 -> 17.1.9
+        opnsense-lang: 17.1.8 -> 17.1.9
+        opnsense: 17.1.8 -> 17.1.9
+        openvpn23: 2.3.15 -> 2.3.17
+        openssh-portable: 7.5.p1,1 -> 7.5.p1_1,1
+        openldap-sasl-client: 2.4.44 -> 2.4.45
+        lmdb: 0.9.19,1 -> 0.9.21,1
+        libnghttp2: 1.23.0 -> 1.23.1
+        krb5: 1.15.1_4 -> 1.15.1_5
+        glib: 2.50.2_2,1 -> 2.50.2_3,1
+        expat: 2.2.0_1 -> 2.2.1
+        dnsmasq: 2.76,1 -> 2.77_1,1
+        curl: 7.54.0 -> 7.54.1
+        ca_root_nss: 3.30.2 -> 3.31
+        bind911: 9.11.1 -> 9.11.1P2
+
+Installed packages to be REINSTALLED:
+        cyrus-sasl-2.1.26_12
+
+Number of packages to be installed: 2
+Number of packages to be upgraded: 43
+Number of packages to be reinstalled: 1
+
+The process will require 4 MiB more space.
+40 MiB to be downloaded.
+[1/46] Fetching unbound-1.6.3.txz: .......... done
+[2/46] Fetching suricata-3.2.2.txz: .......... done
+[3/46] Fetching sudo-1.8.20p2_2.txz: .......... done
+[4/46] Fetching squid-3.5.26.txz: .......... done
+[5/46] Fetching sqlite3-3.19.3_1.txz: .......... done
+[6/46] Fetching readline-7.0.3.txz: .......... done
+[7/46] Fetching python27-2.7.12_4.txz: .......... done
+[8/46] Fetching py27-setuptools-36.0.1.txz: .......... done
+[9/46] Fetching py27-netaddr-0.7.19.txz: .......... done
+[10/46] Fetching php70-zlib-7.0.20_1.txz: ... done
+[11/46] Fetching php70-xml-7.0.20_1.txz: ... done
+[12/46] Fetching php70-sqlite3-7.0.20_1.txz: ... done
+[13/46] Fetching php70-sockets-7.0.20_1.txz: ..... done
+[14/46] Fetching php70-simplexml-7.0.20_1.txz: ... done
+[15/46] Fetching php70-session-7.0.20_1.txz: .... done
+[16/46] Fetching php70-pdo-7.0.20_1.txz: ...... done
+[17/46] Fetching php70-openssl-7.0.20_1.txz: ...... done
+[18/46] Fetching php70-mcrypt-7.0.20_1.txz: .. done
+[19/46] Fetching php70-ldap-7.0.20_1.txz: ... done
+[20/46] Fetching php70-json-7.0.20_1.txz: ... done
+[21/46] Fetching php70-hash-7.0.20_1.txz: .......... done
+[22/46] Fetching php70-gettext-7.0.20_1.txz: . done
+[23/46] Fetching php70-filter-7.0.20_1.txz: ... done
+[24/46] Fetching php70-dom-7.0.20_1.txz: ....... done
+[25/46] Fetching php70-curl-7.0.20_1.txz: .... done
+[26/46] Fetching php70-ctype-7.0.20_1.txz: . done
+[27/46] Fetching php70-7.0.20_1.txz: .......... done
+[28/46] Fetching pcre-8.40_1.txz: .......... done
+[29/46] Fetching opnsense-update-17.1.9.txz: ......... done
+[30/46] Fetching opnsense-lang-17.1.9.txz: .......... done
+[31/46] Fetching opnsense-17.1.9.txz: .......... done
+[32/46] Fetching openvpn23-2.3.17.txz: .......... done
+[33/46] Fetching openssh-portable-7.5.p1_1,1.txz: .......... done
+[34/46] Fetching openldap-sasl-client-2.4.45.txz: .......... done
+[35/46] Fetching lmdb-0.9.21,1.txz: .......... done
+[36/46] Fetching libnghttp2-1.23.1.txz: .......... done
+[37/46] Fetching krb5-1.15.1_5.txz: .......... done
+[38/46] Fetching glib-2.50.2_3,1.txz: .......... done
+[39/46] Fetching expat-2.2.1.txz: .......... done
+[40/46] Fetching dnsmasq-2.77_1,1.txz: .......... done
+[41/46] Fetching cyrus-sasl-2.1.26_12.txz: .......... done
+[42/46] Fetching curl-7.54.1.txz: .......... done
+[43/46] Fetching ca_root_nss-3.31.txz: .......... done
+[44/46] Fetching bind911-9.11.1P2.txz: .......... done
+[45/46] Fetching openvpn-2.4.3.txz: .......... done
+[46/46] Fetching liblz4-1.7.5,1.txz: .......... done
+Checking integrity... done (2 conflicting)
+  - openvpn-2.4.3 conflicts with openvpn23-2.3.17 on /usr/local/etc/rc.d/openvpn
+  - openvpn-2.4.3 conflicts with openvpn23-2.3.15 on /usr/local/etc/rc.d/openvpn
+Cannot solve problem using SAT solver, trying another plan
+Checking integrity... done (0 conflicting)
+Conflicts with the existing packages have been found.
+One more solver iteration is needed to resolve them.
+The following 46 package(s) will be affected (of 0 checked):
+
+Installed packages to be REMOVED:
+        openvpn23-2.3.15
+
+New packages to be INSTALLED:
+        liblz4: 1.7.5,1
+        openvpn: 2.4.3
+
+Installed packages to be UPGRADED:
+        readline: 6.3.8_1 -> 7.0.3
+        python27: 2.7.12_2 -> 2.7.12_4
+        py27-setuptools: 32.1.0_1 -> 36.0.1
+        pcre: 8.40 -> 8.40_1
+        php70: 7.0.19 -> 7.0.20_1
+        libnghttp2: 1.23.0 -> 1.23.1
+        ca_root_nss: 3.30.2 -> 3.31
+        sqlite3: 3.18.0 -> 3.19.3_1
+        php70-pdo: 7.0.19 -> 7.0.20_1
+        php70-json: 7.0.19 -> 7.0.20_1
+        php70-hash: 7.0.19 -> 7.0.20_1
+        openldap-sasl-client: 2.4.44 -> 2.4.45
+        lmdb: 0.9.19,1 -> 0.9.21,1
+        krb5: 1.15.1_4 -> 1.15.1_5
+        expat: 2.2.0_1 -> 2.2.1
+        curl: 7.54.0 -> 7.54.1
+        unbound: 1.6.2 -> 1.6.3
+        suricata: 3.2.1 -> 3.2.2
+        sudo: 1.8.20 -> 1.8.20p2_2
+        squid: 3.5.25 -> 3.5.26
+        py27-netaddr: 0.7.18_1 -> 0.7.19
+        php70-zlib: 7.0.19 -> 7.0.20_1
+        php70-xml: 7.0.19 -> 7.0.20_1
+        php70-sqlite3: 7.0.19 -> 7.0.20_1
+        php70-sockets: 7.0.19 -> 7.0.20_1
+        php70-simplexml: 7.0.19 -> 7.0.20_1
+        php70-session: 7.0.19 -> 7.0.20_1
+        php70-openssl: 7.0.19 -> 7.0.20_1
+        php70-mcrypt: 7.0.19 -> 7.0.20_1
+        php70-ldap: 7.0.19 -> 7.0.20_1
+        php70-gettext: 7.0.19 -> 7.0.20_1
+        php70-filter: 7.0.19 -> 7.0.20_1
+        php70-dom: 7.0.19 -> 7.0.20_1
+        php70-curl: 7.0.19 -> 7.0.20_1
+        php70-ctype: 7.0.19 -> 7.0.20_1
+        opnsense-update: 17.1.7_1 -> 17.1.9
+        opnsense-lang: 17.1.8 -> 17.1.9
+        openssh-portable: 7.5.p1,1 -> 7.5.p1_1,1
+        dnsmasq: 2.76,1 -> 2.77_1,1
+        bind911: 9.11.1 -> 9.11.1P2
+        opnsense: 17.1.8 -> 17.1.9
+        glib: 2.50.2_2,1 -> 2.50.2_3,1
+
+Installed packages to be REINSTALLED:
+        cyrus-sasl-2.1.26_12
+
+Number of packages to be removed: 1
+Number of packages to be installed: 2
+Number of packages to be upgraded: 42
+Number of packages to be reinstalled: 1
+
+The process will require 3 MiB more space.
+[1/46] Upgrading readline from 6.3.8_1 to 7.0.3...
+[1/46] Extracting readline-7.0.3: .......... done
+[2/46] Upgrading python27 from 2.7.12_2 to 2.7.12_4...
+[2/46] Extracting python27-2.7.12_4: .......... done
+[3/46] Upgrading pcre from 8.40 to 8.40_1...
+[3/46] Extracting pcre-8.40_1: .......... done
+[4/46] Upgrading libnghttp2 from 1.23.0 to 1.23.1...
+[4/46] Extracting libnghttp2-1.23.1: .......... done
+[5/46] Reinstalling cyrus-sasl-2.1.26_12...
+*** Added group `cyrus' (id 60)
+*** Added user `cyrus' (id 60)
+[5/46] Extracting cyrus-sasl-2.1.26_12: .......... done
+[6/46] Upgrading ca_root_nss from 3.30.2 to 3.31...
+[6/46] Extracting ca_root_nss-3.31: ........ done
+[7/46] Upgrading py27-setuptools from 32.1.0_1 to 36.0.1...
+[7/46] Extracting py27-setuptools-36.0.1: .......... done
+[8/46] Upgrading php70 from 7.0.19 to 7.0.20_1...
+[8/46] Extracting php70-7.0.20_1: .......... done
+[9/46] Upgrading sqlite3 from 3.18.0 to 3.19.3_1...
+[9/46] Extracting sqlite3-3.19.3_1: .......... done
+[10/46] Upgrading openldap-sasl-client from 2.4.44 to 2.4.45...
+[10/46] Extracting openldap-sasl-client-2.4.45: .......... done
+[11/46] Upgrading lmdb from 0.9.19,1 to 0.9.21,1...
+[11/46] Extracting lmdb-0.9.21,1: .......... done
+[12/46] Upgrading krb5 from 1.15.1_4 to 1.15.1_5...
+[12/46] Extracting krb5-1.15.1_5: .......... done
+[13/46] Upgrading expat from 2.2.0_1 to 2.2.1...
+[13/46] Extracting expat-2.2.1: .......... done
+[14/46] Upgrading curl from 7.54.0 to 7.54.1...
+[14/46] Extracting curl-7.54.1: .......... done
+[15/46] Upgrading php70-pdo from 7.0.19 to 7.0.20_1...
+[15/46] Extracting php70-pdo-7.0.20_1: .......... done
+[16/46] Upgrading php70-json from 7.0.19 to 7.0.20_1...
+[16/46] Extracting php70-json-7.0.20_1: .......... done
+[17/46] Upgrading php70-hash from 7.0.19 to 7.0.20_1...
+[17/46] Extracting php70-hash-7.0.20_1: .......... done
+[18/46] Upgrading unbound from 1.6.2 to 1.6.3...
+===> Creating groups.
+Using existing group 'unbound'.
+===> Creating users
+Using existing user 'unbound'.
+[18/46] Extracting unbound-1.6.3: .......... done
+[19/46] Upgrading suricata from 3.2.1 to 3.2.2...
+[19/46] Extracting suricata-3.2.2: .......... done
+You may need to manually remove /usr/local/etc/suricata/suricata.yaml if it is no longer needed.
+You may need to manually remove /usr/local/etc/suricata/classification.config if it is no longer needed.
+[20/46] Upgrading sudo from 1.8.20 to 1.8.20p2_2...
+[20/46] Extracting sudo-1.8.20p2_2: ......... done
+[21/46] Upgrading squid from 3.5.25 to 3.5.26...
+===> Creating groups.
+Using existing group 'squid'.
+===> Creating users
+Using existing user 'squid'.
+===> Pre-installation configuration for squid-3.5.26
+[21/46] Extracting squid-3.5.26: .......... done
+You may need to manually remove /usr/local/etc/squid/squid.conf if it is no longer needed.
+[22/46] Upgrading py27-netaddr from 0.7.18_1 to 0.7.19...
+[22/46] Extracting py27-netaddr-0.7.19: .......... done
+[23/46] Upgrading php70-zlib from 7.0.19 to 7.0.20_1...
+[23/46] Extracting php70-zlib-7.0.20_1: ....... done
+[24/46] Upgrading php70-xml from 7.0.19 to 7.0.20_1...
+[24/46] Extracting php70-xml-7.0.20_1: ........ done
+[25/46] Upgrading php70-sqlite3 from 7.0.19 to 7.0.20_1...
+[25/46] Extracting php70-sqlite3-7.0.20_1: ........ done
+[26/46] Upgrading php70-sockets from 7.0.19 to 7.0.20_1...
+[26/46] Extracting php70-sockets-7.0.20_1: .......... done
+[27/46] Upgrading php70-simplexml from 7.0.19 to 7.0.20_1...
+[27/46] Extracting php70-simplexml-7.0.20_1: ......... done
+[28/46] Upgrading php70-session from 7.0.19 to 7.0.20_1...
+[28/46] Extracting php70-session-7.0.20_1: .......... done
+[29/46] Upgrading php70-openssl from 7.0.19 to 7.0.20_1...
+[29/46] Extracting php70-openssl-7.0.20_1: ....... done
+[30/46] Upgrading php70-mcrypt from 7.0.19 to 7.0.20_1...
+[30/46] Extracting php70-mcrypt-7.0.20_1: ........ done
+[31/46] Upgrading php70-ldap from 7.0.19 to 7.0.20_1...
+[31/46] Extracting php70-ldap-7.0.20_1: ....... done
+[32/46] Upgrading php70-gettext from 7.0.19 to 7.0.20_1...
+[32/46] Extracting php70-gettext-7.0.20_1: ....... done
+[33/46] Upgrading php70-filter from 7.0.19 to 7.0.20_1...
+[33/46] Extracting php70-filter-7.0.20_1: ........ done
+[34/46] Upgrading php70-dom from 7.0.19 to 7.0.20_1...
+[34/46] Extracting php70-dom-7.0.20_1: .......... done
+[35/46] Upgrading php70-curl from 7.0.19 to 7.0.20_1...
+[35/46] Extracting php70-curl-7.0.20_1: ....... done
+[36/46] Upgrading php70-ctype from 7.0.19 to 7.0.20_1...
+[36/46] Extracting php70-ctype-7.0.20_1: ....... done
+[37/46] Upgrading opnsense-update from 17.1.7_1 to 17.1.9...
+[37/46] Extracting opnsense-update-17.1.9: .......... done
+[38/46] Upgrading opnsense-lang from 17.1.8 to 17.1.9...
+[38/46] Extracting opnsense-lang-17.1.9: .......... done
+[39/46] Upgrading openssh-portable from 7.5.p1,1 to 7.5.p1_1,1...
+[39/46] Extracting openssh-portable-7.5.p1_1,1: .......... done
+You may need to manually remove /usr/local/etc/ssh/sshd_config if it is no longer needed.
+[40/46] Upgrading dnsmasq from 2.76,1 to 2.77_1,1...
+[40/46] Extracting dnsmasq-2.77_1,1: .......... done
+[41/46] Upgrading bind911 from 9.11.1 to 9.11.1P2...
+[41/46] Extracting bind911-9.11.1P2: .......... done
+[42/46] Deinstalling openvpn23-2.3.15...
+[42/46] Deleting files for openvpn23-2.3.15: .......... done
+[43/46] Installing liblz4-1.7.5,1...
+[43/46] Extracting liblz4-1.7.5,1: .......... done
+[44/46] Installing openvpn-2.4.3...
+[44/46] Extracting openvpn-2.4.3: .......... done
+[45/46] Upgrading opnsense from 17.1.8 to 17.1.9...
+[45/46] Extracting opnsense-17.1.9: .......... done
+Resetting root shell
+Updating /etc/shells
+Unhooking from /etc/rc
+Unhooking from /etc/rc.shutdown
+Updating /etc/shells
+Registering root shell
+Hooking into /etc/rc
+Hooking into /etc/rc.shutdown
+Writing package metadata
+Stopping configd...done
+Starting configd.
+Keep version OPNsense\CaptivePortal\CaptivePortal (1.0.0)
+Keep version OPNsense\Cron\Cron (1.0.0)
+Keep version OPNsense\TrafficShaper\TrafficShaper (1.0.1)
+Keep version OPNsense\IDS\IDS (1.0.0)
+Keep version OPNsense\Proxy\Proxy (1.0.0)
+Keep version OPNsense\Diagnostics\Netflow (1.0.0)
+Writing firmware setting...done.
+Configuring login behaviour...done.
+[46/46] Upgrading glib from 2.50.2_2,1 to 2.50.2_3,1...
+[46/46] Extracting glib-2.50.2_3,1: .......... done
+No schema files found: doing nothing.
+Message from python27-2.7.12_4:
+===========================================================================
+
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+bsddb           databases/py-bsddb
+gdbm            databases/py-gdbm
+sqlite3         databases/py-sqlite3
+tkinter         x11-toolkits/py-tkinter
+
+===========================================================================
+Message from cyrus-sasl-2.1.26_12:
+You can use sasldb2 for authentication, to add users use:
+
+        saslpasswd2 -c username
+
+If you want to enable SMTP AUTH with the system Sendmail, read
+Sendmail.README
+
+NOTE: This port has been compiled with a default pwcheck_method of
+      auxprop.  If you want to authenticate your user by /etc/passwd,
+      PAM or LDAP, install ports/security/cyrus-sasl2-saslauthd and
+      set sasl_pwcheck_method to saslauthd after installing the
+      Cyrus-IMAPd 2.X port.  You should also check the
+      /usr/local/lib/sasl2/*.conf files for the correct
+      pwcheck_method.
+      If you want to use GSSAPI mechanism, install
+      ports/security/cyrus-sasl2-gssapi.
+      If you want to use SRP mechanism, install
+      ports/security/cyrus-sasl2-srp.
+      If you want to use LDAP auxprop plugin, install
+      ports/security/cyrus-sasl2-ldapdb.
+Message from ca_root_nss-3.31:
+********************************* WARNING *********************************
+
+FreeBSD does not, and can not warrant that the certification authorities
+whose certificates are included in this package have in any way been
+audited for trustworthiness or RFC 3647 compliance.
+
+Assessment and verification of trust is the complete responsibility of the
+system administrator.
+
+*********************************** NOTE **********************************
+
+This package installs symlinks to support root certificates discovery by
+default for software that uses OpenSSL.
+
+This enables SSL Certificate Verification by client software without manual
+intervention.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * /usr/local/etc/ssl/cert.pem
+  * /usr/local/openssl/cert.pem
+
+***************************************************************************
+Message from openldap-sasl-client-2.4.45:
+************************************************************
+
+The OpenLDAP client package has been successfully installed.
+
+Edit
+  /usr/local/etc/openldap/ldap.conf
+to change the system-wide client defaults.
+
+Try `man ldap.conf' and visit the OpenLDAP FAQ-O-Matic at
+  http://www.OpenLDAP.org/faq/index.cgi?file=3
+for more information.
+
+************************************************************
+Message from php70-pdo-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-pdo.ini
+configuration file to automatically load the installed extension:
+
+extension=pdo.so
+
+****************************************************************************
+Message from php70-json-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-json.ini
+configuration file to automatically load the installed extension:
+
+extension=json.so
+
+****************************************************************************
+Message from php70-hash-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-hash.ini
+configuration file to automatically load the installed extension:
+
+extension=hash.so
+
+****************************************************************************
+Message from suricata-3.2.2:
+===========================================================================
+
+If you want to run Suricata in IDS mode, add to /etc/rc.conf:
+
+        suricata_enable="YES"
+        suricata_interface="<if>"
+
+NOTE: Declaring suricata_interface is MANDATORY for Suricata in IDS Mode.
+
+However, if you want to run Suricata in Inline IPS Mode in divert(4) mode,
+add to /etc/rc.conf:
+
+        suricata_enable="YES"
+        suricata_divertport="8000"
+
+NOTE:
+        Suricata won't start in IDS mode without an interface configured.
+        Therefore if you omit suricata_interface from rc.conf, FreeBSD's
+        rc.d/suricata will automatically try to start Suricata in IPS Mode
+        (on divert port 8000, by default).
+
+Alternatively, if you want to run Suricata in Inline IPS Mode in high-speed
+netmap(4) mode, add to /etc/rc.conf:
+
+        suricata_enable="YES"
+        suricata_netmap="YES"
+
+NOTE:
+        Suricata requires additional interface settings in the configuration
+        file to run in netmap(4) mode.
+
+RULES: Suricata IDS/IPS Engine comes without rules by default. You should
+add rules by yourself and set an updating strategy. To do so, please visit:
+
+ http://www.openinfosecfoundation.org/documentation/rules.html
+ http://www.openinfosecfoundation.org/documentation/emerging-threats.html
+
+You may want to try BPF in zerocopy mode to test performance improvements:
+
+        sysctl -w net.bpf.zerocopy_enable=1
+
+Don't forget to add net.bpf.zerocopy_enable=1 to /etc/sysctl.conf
+
+===========================================================================
+Message from squid-3.5.26:
+o You can find the configuration files for this package in the
+       directory /usr/local/etc/squid.
+
+     o The default cache directory is /var/squid/cache/.
+       The default log directory is /var/log/squid/.
+
+       Note:
+       You must initialize new cache directories before you can start
+       squid.  Do this by running "squid -z" as 'root' or 'squid'.
+       If your cache directories are already initialized (e.g. after an
+       upgrade of squid) you do not need to initialize them again.
+
+     o When using DiskD storage scheme remember to read documentation:
+         http://wiki.squid-cache.org/Features/DiskDaemon
+       and alter your kern.ipc defaults in /boot/loader.conf. DiskD will not
+       work reliably without this. Last recomendations were:
+
+         kern.ipc.msgmnb=8192
+         kern.ipc.msgssz=64
+         kern.ipc.msgtql=2048
+
+     o The default configuration will deny everyone but the local host and
+       local networks as defined in RFC 1918 for IPv4 and RFCs 4193 and
+       4291 for IPv6 access to the proxy service.  Edit the "http_access
+       allow/deny" directives in /usr/local/etc/squid/squid.conf
+       to suit your needs.
+
+     o If AUTH_SQL option is set, please, don't forget to install one of
+       following perl modules depending on database you like:
+         databases/p5-DBD-mysql
+         databases/p5-DBD-Pg
+         databases/p5-DBD-SQLite
+
+     To enable Squid, set squid_enable=yes in either
+     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid
+     Please see /usr/local/etc/rc.d/squid for further details.
+
+     Note:
+     If you just updated your Squid installation from an earlier version,
+     make sure to check your Squid configuration against the 3.4 default
+     configuration file /usr/local/etc/squid/squid.conf.sample.
+
+     /usr/local/etc/squid/squid.conf.documented is a fully annotated
+     configuration file you can consult for further reference.
+
+     Additionally, you should check your configuration by calling
+     'squid -f /path/to/squid.conf -k parse' before starting Squid.
+Message from php70-zlib-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-zlib.ini
+configuration file to automatically load the installed extension:
+
+extension=zlib.so
+
+****************************************************************************
+Message from php70-xml-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-xml.ini
+configuration file to automatically load the installed extension:
+
+extension=xml.so
+
+****************************************************************************
+Message from php70-sqlite3-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-sqlite3.ini
+configuration file to automatically load the installed extension:
+
+extension=sqlite3.so
+
+****************************************************************************
+Message from php70-sockets-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-sockets.ini
+configuration file to automatically load the installed extension:
+
+extension=sockets.so
+
+****************************************************************************
+Message from php70-simplexml-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-simplexml.ini
+configuration file to automatically load the installed extension:
+
+extension=simplexml.so
+
+****************************************************************************
+Message from php70-session-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-18-session.ini
+configuration file to automatically load the installed extension:
+
+extension=session.so
+
+****************************************************************************
+Message from php70-openssl-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-openssl.ini
+configuration file to automatically load the installed extension:
+
+extension=openssl.so
+
+****************************************************************************
+Message from php70-mcrypt-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-mcrypt.ini
+configuration file to automatically load the installed extension:
+
+extension=mcrypt.so
+
+****************************************************************************
+Message from php70-ldap-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-ldap.ini
+configuration file to automatically load the installed extension:
+
+extension=ldap.so
+
+****************************************************************************
+Message from php70-gettext-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-gettext.ini
+configuration file to automatically load the installed extension:
+
+extension=gettext.so
+
+****************************************************************************
+Message from php70-filter-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-filter.ini
+configuration file to automatically load the installed extension:
+
+extension=filter.so
+
+****************************************************************************
+Message from php70-dom-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-dom.ini
+configuration file to automatically load the installed extension:
+
+extension=dom.so
+
+****************************************************************************
+Message from php70-curl-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-curl.ini
+configuration file to automatically load the installed extension:
+
+extension=curl.so
+
+****************************************************************************
+Message from php70-ctype-7.0.20_1:
+****************************************************************************
+
+The following line has been added to your /usr/local/etc/php/ext-20-ctype.ini
+configuration file to automatically load the installed extension:
+
+extension=ctype.so
+
+****************************************************************************
+Message from openssh-portable-7.5.p1_1,1:
+To enable this port, add openssh_enable="YES" in your rc.conf. To
+prevent conflict with openssh in the base system add sshd_enable="NO"
+in your rc.conf. Also you can configure openssh at another TCP port (via
+sshd_config 'Port' and 'Listen' options or via 'openssh_flags'
+variable in rc.conf) and run it in same time with base sshd.
+
+'PermitRootLogin no' is the default for the OpenSSH port.
+This now matches the PermitRootLogin configuration of OpenSSH in
+the base system.  Please be aware of this when upgrading your
+OpenSSH port, and if truly necessary, re-enable remote root login
+by readjusting this option in your sshd_config.
+
+Users are encouraged to create single-purpose users with ssh keys, disable
+Password authentication by setting 'PasswordAuthentication no' and
+'ChallengeResponseAuthentication no', and to define very narrow sudo
+privileges instead of using root for automated tasks.
+Message from dnsmasq-2.77_1,1:
+*** To enable dnsmasq, edit /usr/local/etc/dnsmasq.conf and
+*** set dnsmasq_enable="YES" in /etc/rc.conf[.local]
+***
+*** Further options and actions are documented inside
+*** /usr/local/etc/rc.d/dnsmasq
+Message from bind911-9.11.1P2:
+**********************************************************************
+*            _  _____ _____ _____ _   _ _____ ___ ___  _   _         *
+*           / \|_   _|_   _| ____| \ | |_   _|_ _/ _ \| \ | |        *
+*          / _ \ | |   | | |  _| |  \| | | |  | | | | |  \| |        *
+*         / ___ \| |   | | | |___| |\  | | |  | | |_| | |\  |        *
+*        /_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|        *
+*                                                                    *
+*   BIND requires configuration of rndc, including a "secret" key.   *
+*    The easiest, and most secure way to configure rndc is to run    *
+*   'rndc-confgen -a' to generate the proper conf file, with a new   *
+*            random key, and appropriate file permissions.           *
+*                                                                    *
+*     The /usr/local/etc/rc.d/named script will do that for you.     *
+*                                                                    *
+*      If using syslog to log the BIND9 activity, and using a        *
+*     chroot'ed installation, you will need to tell syslog to        *
+*       install a log socket in the BIND9 chroot by running:         *
+*                                                                    *
+*            # sysrc altlog_proglist+=named                          *
+*                                                                    *
+*    And then restarting syslogd with: service syslogd restart       *
+*                                                                    *
+**********************************************************************
+Message from openvpn-2.4.3:
+### ------------------------------------------------------------------------
+###  Edit /etc/rc.conf[.local] to start OpenVPN automatically at system
+###  startup. See /usr/local/etc/rc.d/openvpn for details.
+### ------------------------------------------------------------------------
+###  Connect to VPN server as a client with this command to include
+###  the client.up/down scripts in the initialization:
+###  openvpn-client <spec>.ovpn
+### ------------------------------------------------------------------------
+###  For compatibility notes when interoperating with older OpenVPN
+###  versions, please, see <http://openvpn.net/relnotes.html>
+### ------------------------------------------------------------------------
+Message from opnsense-17.1.9:
+What do you mean, an African or European Eagle?
+Checking integrity... done (0 conflicting)
+Nothing to do.
+The following package files will be deleted:
+        /var/cache/pkg/os-vmware-1.4-70339b69fb.txz
+        /var/cache/pkg/fusefs-libs-2.9.5.txz
+        /var/cache/pkg/os-vmware-1.4.txz
+        /var/cache/pkg/open-vm-tools-nox11-10.1.0_2,2-db7ae918e3.txz
+        /var/cache/pkg/xerces-c3-3.1.4-60629dc756.txz
+        /var/cache/pkg/open-vm-tools-nox11-10.1.0_2,2.txz
+        /var/cache/pkg/xerces-c3-3.1.4.txz
+        /var/cache/pkg/fusefs-libs-2.9.5-b5e97d7bff.txz
+        /var/cache/pkg/apache-xml-security-c-1.7.3-d7a456f50f.txz
+        /var/cache/pkg/libdnet-1.12_1-2c7341f821.txz
+        /var/cache/pkg/apache-xml-security-c-1.7.3.txz
+        /var/cache/pkg/sqlite3-3.19.3_1-101cec5511.txz
+        /var/cache/pkg/libdnet-1.12_1.txz
+        /var/cache/pkg/icu-58.2_2,1-6c155de79a.txz
+        /var/cache/pkg/icu-58.2_2,1.txz
+        /var/cache/pkg/glib-2.50.2_2,1-6e8c04c3fd.txz
+        /var/cache/pkg/glib-2.50.2_2,1.txz
+        /var/cache/pkg/libmspack-0.5-a92f37db36.txz
+        /var/cache/pkg/libmspack-0.5.txz
+        /var/cache/pkg/unbound-1.6.3-3049e6afa6.txz
+        /var/cache/pkg/unbound-1.6.3.txz
+        /var/cache/pkg/suricata-3.2.2-3710ff0701.txz
+        /var/cache/pkg/suricata-3.2.2.txz
+        /var/cache/pkg/sudo-1.8.20p2_2-ac71cbd788.txz
+        /var/cache/pkg/sudo-1.8.20p2_2.txz
+        /var/cache/pkg/squid-3.5.26-b2cf3d896d.txz
+        /var/cache/pkg/squid-3.5.26.txz
+        /var/cache/pkg/py27-setuptools-36.0.1.txz
+        /var/cache/pkg/sqlite3-3.19.3_1.txz
+        /var/cache/pkg/readline-7.0.3-49fccba22a.txz
+        /var/cache/pkg/readline-7.0.3.txz
+        /var/cache/pkg/python27-2.7.12_4-7936b3a2c4.txz
+        /var/cache/pkg/python27-2.7.12_4.txz
+        /var/cache/pkg/py27-setuptools-36.0.1-2da4195669.txz
+        /var/cache/pkg/py27-netaddr-0.7.19-a998ccd6cb.txz
+        /var/cache/pkg/php70-sqlite3-7.0.20_1.txz
+        /var/cache/pkg/py27-netaddr-0.7.19.txz
+        /var/cache/pkg/php70-zlib-7.0.20_1-936b858eba.txz
+        /var/cache/pkg/php70-zlib-7.0.20_1.txz
+        /var/cache/pkg/php70-xml-7.0.20_1-8ff6d33e66.txz
+        /var/cache/pkg/php70-xml-7.0.20_1.txz
+        /var/cache/pkg/php70-sqlite3-7.0.20_1-cc7f135b96.txz
+        /var/cache/pkg/php70-sockets-7.0.20_1-4646ca0900.txz
+        /var/cache/pkg/php70-simplexml-7.0.20_1.txz
+        /var/cache/pkg/php70-sockets-7.0.20_1.txz
+        /var/cache/pkg/php70-simplexml-7.0.20_1-866e96b805.txz
+        /var/cache/pkg/php70-session-7.0.20_1-77e089c55f.txz
+        /var/cache/pkg/php70-session-7.0.20_1.txz
+        /var/cache/pkg/php70-pdo-7.0.20_1-52858efab4.txz
+        /var/cache/pkg/php70-pdo-7.0.20_1.txz
+        /var/cache/pkg/php70-openssl-7.0.20_1-6d52d65ae6.txz
+        /var/cache/pkg/php70-mcrypt-7.0.20_1-f7eb0891c9.txz
+        /var/cache/pkg/php70-openssl-7.0.20_1.txz
+        /var/cache/pkg/php70-mcrypt-7.0.20_1.txz
+        /var/cache/pkg/php70-ldap-7.0.20_1-00bbbec645.txz
+        /var/cache/pkg/php70-ldap-7.0.20_1.txz
+        /var/cache/pkg/php70-json-7.0.20_1-b5e2a66652.txz
+        /var/cache/pkg/php70-json-7.0.20_1.txz
+        /var/cache/pkg/php70-hash-7.0.20_1-113909a859.txz
+        /var/cache/pkg/php70-hash-7.0.20_1.txz
+        /var/cache/pkg/php70-gettext-7.0.20_1-d2246dd31c.txz
+        /var/cache/pkg/php70-gettext-7.0.20_1.txz
+        /var/cache/pkg/php70-filter-7.0.20_1-6c31947289.txz
+        /var/cache/pkg/php70-filter-7.0.20_1.txz
+        /var/cache/pkg/php70-dom-7.0.20_1-3500028f06.txz
+        /var/cache/pkg/php70-dom-7.0.20_1.txz
+        /var/cache/pkg/php70-curl-7.0.20_1-a4eaf88449.txz
+        /var/cache/pkg/php70-curl-7.0.20_1.txz
+        /var/cache/pkg/php70-ctype-7.0.20_1-bd5a590555.txz
+        /var/cache/pkg/php70-7.0.20_1-a6142d5de7.txz
+        /var/cache/pkg/php70-ctype-7.0.20_1.txz
+        /var/cache/pkg/php70-7.0.20_1.txz
+        /var/cache/pkg/pcre-8.40_1-f281dd6957.txz
+        /var/cache/pkg/pcre-8.40_1.txz
+        /var/cache/pkg/opnsense-update-17.1.9-529ba72cd6.txz
+        /var/cache/pkg/opnsense-update-17.1.9.txz
+        /var/cache/pkg/opnsense-lang-17.1.9-3d0f49d3c5.txz
+        /var/cache/pkg/opnsense-17.1.9-ee3389715e.txz
+        /var/cache/pkg/opnsense-17.1.9.txz
+        /var/cache/pkg/opnsense-lang-17.1.9.txz
+        /var/cache/pkg/openvpn23-2.3.17-4624e708bf.txz
+        /var/cache/pkg/openvpn23-2.3.17.txz
+        /var/cache/pkg/openssh-portable-7.5.p1_1,1-c26287f918.txz
+        /var/cache/pkg/openssh-portable-7.5.p1_1,1.txz
+        /var/cache/pkg/openldap-sasl-client-2.4.45-7f2b101fec.txz
+        /var/cache/pkg/lmdb-0.9.21,1-c903af8b9a.txz
+        /var/cache/pkg/openldap-sasl-client-2.4.45.txz
+        /var/cache/pkg/lmdb-0.9.21,1.txz
+        /var/cache/pkg/libnghttp2-1.23.1-6317706137.txz
+        /var/cache/pkg/libnghttp2-1.23.1.txz
+        /var/cache/pkg/krb5-1.15.1_5-895cae2045.txz
+        /var/cache/pkg/expat-2.2.1-eeee6290bd.txz
+        /var/cache/pkg/krb5-1.15.1_5.txz
+        /var/cache/pkg/glib-2.50.2_3,1-ea343096e5.txz
+        /var/cache/pkg/glib-2.50.2_3,1.txz
+        /var/cache/pkg/expat-2.2.1.txz
+        /var/cache/pkg/dnsmasq-2.77_1,1-d8125e6bc4.txz
+        /var/cache/pkg/dnsmasq-2.77_1,1.txz
+        /var/cache/pkg/cyrus-sasl-2.1.26_12-98c6efd8af.txz
+        /var/cache/pkg/curl-7.54.1-5b9cebda97.txz
+        /var/cache/pkg/cyrus-sasl-2.1.26_12.txz
+        /var/cache/pkg/curl-7.54.1.txz
+        /var/cache/pkg/ca_root_nss-3.31-7e1aad4c75.txz
+        /var/cache/pkg/ca_root_nss-3.31.txz
+        /var/cache/pkg/bind911-9.11.1P2-09d942eae6.txz
+        /var/cache/pkg/bind911-9.11.1P2.txz
+        /var/cache/pkg/openvpn-2.4.3-d006f85508.txz
+        /var/cache/pkg/openvpn-2.4.3.txz
+        /var/cache/pkg/liblz4-1.7.5,1-3c28fdb3d6.txz
+        /var/cache/pkg/liblz4-1.7.5,1.txz
+The cleanup will free 55 MiB
+Deleting files: .......... done
+All done
+Starting web GUI...done.
+Generating RRD graphs...done.
+Fetching base-17.1.9-amd64.obsolete: .... done
+Fetching base-17.1.9-amd64.txz: ...................... done
+Fetching kernel-17.1.9-amd64.txz: ......... done
+!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!
+! A critical upgrade is in progress. !
+! Please do not turn off the system. !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Installing kernel-17.1.9-amd64.txz... done
+Installing base-17.1.9-amd64.txz... done
+Installing base-17.1.9-amd64.obsolete... done
+Please reboot.
+>>> Invoking stop script 'beep'
+>>> Invoking stop script 'freebsd'
+>>> Invoking stop script 'backup'
+Cannot 'stop' flowd_aggregate. Set flowd_aggregate_enable to YES in /etc/rc.conf or use 'onestop' instead of 'stop'.
+Shutdown NOW!
+shutdown: [pid 80351]
+                                                                            
+*** FINAL System shutdown message from root@RT-1.opnsense.lab ***           
+
+System going down IMMEDIATELY                                               
+
+                                                                            
+
+System shutdown time has arrived
