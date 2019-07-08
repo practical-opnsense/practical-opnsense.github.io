@@ -7,7 +7,7 @@ __The book is available since June 2019 as e-book or printed book.__
 Take a look into the [table of contents](Table_of_contents.md)
 
 
-## Enterprise firewalls build on open source
+## Building Enterprise Firewalls with Open Source
 
 ![Cover image](images/brickwall_256px.png)
 
