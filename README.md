@@ -35,7 +35,7 @@ Almost all chapters use the same network layout and the same IPv4/IPv6 addresses
 
 * The [errata](errata.pdf) lists the mistakes in content and their correction.
 
-* Buy a copy of this book at [Amazon](https://www.amazon.de/Practical-OPNsense-Enterprise-firewalls-source/dp/3738632018) or [BoD](https://www.bod.de/buchshop/practical-opnsense-markus-stubbig-9783738632019)
+* Buy a copy of this book at [Amazon](https://www.amazon.com/Practical-OPNsense-Markus-Stubbig/dp/3748107234) or [BoD](https://www.bod.de/buchshop/practical-opnsense-markus-stubbig-9783748107231)
 
 * Contact the author by [email](mailto:practical.opnsense@gmail.com)
 
