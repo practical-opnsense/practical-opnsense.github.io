@@ -2,7 +2,7 @@
 
 Simple packet filters are becoming a thing of the past. Even the open-source domain is moving towards Next-Generation Firewalls. And [OPNsense](https://opnsense.org/) is a top player when it comes to intrusion detection, application control, web filtering, and anti-virus.
 
-__The book is available since June 2019 as e-book or printed book.__
+__The thrid edition is expected in July 2021 as e-book or printed book.__
 
 Take a look into the [table of contents](Table_of_contents.md)
 
