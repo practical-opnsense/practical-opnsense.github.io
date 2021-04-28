@@ -39,7 +39,7 @@
 * Summary
 
 
-## Teil 2: For Intermediates
+## Part 2: For Intermediates
 
 #### 6. Firewall
 * OPNsense as firewall
@@ -72,6 +72,7 @@
 * Summary
 
 #### 9. Management Interface
+* Two-factor authentication
 * Summary
 
 
@@ -236,8 +237,8 @@
 
 ## Appendix
 
-#### A. Editing files in FreeBSD
+#### A. Editing Files in FreeBSD
 
-#### B. Pattern matching
+#### B. Pattern Matching
 
-#### C. Bonus material
+#### C. Bonus Material
