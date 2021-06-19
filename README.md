@@ -2,7 +2,9 @@
 
 Simple packet filters are becoming a thing of the past. Even the open-source domain is moving towards Next-Generation Firewalls. And [OPNsense](https://opnsense.org/) is a top player when it comes to intrusion detection, application control, web filtering, and anti-virus.
 
-__The third edition is expected in July 2021 as e-book or printed book.__
+__The third edition of this book is available since May 2021 as printed book.__
+
+__The e-book is expected in July 2021.__
 
 Take a look into the [table of contents](Table_of_contents.md)
 
@@ -35,7 +37,7 @@ Almost all chapters use the same network layout and the same IPv4/IPv6 addresses
 
 * The [errata](errata.pdf) lists the mistakes in content and their correction.
 
-* Buy a copy of this book at [Amazon](https://www.amazon.com/Practical-OPNsense-Markus-Stubbig/dp/3748107234) or [BoD](https://www.bod.de/buchshop/practical-opnsense-markus-stubbig-9783748107231)
+* Buy a copy of this book at [Amazon](https://www.amazon.com/Practical-OPNsense-Building-Enterprise-Firewalls/dp/3754302566) or [BoD](https://www.bod.de/buchshop/practical-opnsense-markus-stubbig-9783754302569)
 
 * Contact the author by [email](mailto:practical.opnsense@gmail.com)
 
