@@ -4,7 +4,7 @@ Simple packet filters are becoming a thing of the past. Even the open-source dom
 
 __The third edition of this book is available since May 2021 as printed book.__
 
-__The e-book is expected in July 2021.__
+__The e-book is available since July 2021.__
 
 Take a look into the [table of contents](Table_of_contents.md)
 
