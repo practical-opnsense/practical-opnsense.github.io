@@ -271,7 +271,7 @@ ul.contact li a:before {
 #header-wrapper {
 	overflow: hidden;
 	padding: 5em 0em;
-	background: #8DCB89 url(/images/header.jpg) no-repeat center;
+	background: rgba(255,255,255,0.08);
 	background-size: cover;
 }
 
