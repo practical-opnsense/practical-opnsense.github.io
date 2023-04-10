@@ -239,8 +239,8 @@
     <kill_states>1</kill_states>
     <backupcount>60</backupcount>
     <crypto_hardware>aesni</crypto_hardware>
-    <dnsserver>10.5.1.253</dnsserver>
-    <language>en_US</language>
+    <dnsserver>10.5.1.250</dnsserver>
+    <language>de_DE</language>
     <prefer_ipv4>1</prefer_ipv4>
     <dns1gw>none</dns1gw>
     <dns2gw>none</dns2gw>
@@ -257,6 +257,10 @@
       <passwordauth>1</passwordauth>
       <permitrootlogin>1</permitrootlogin>
     </ssh>
+    <firmware>
+      <mirror/>
+      <flavour/>
+    </firmware>
     <disablebeep>1</disablebeep>
     <dnslocalhost>1</dnslocalhost>
     <rulesetoptimization>basic</rulesetoptimization>
@@ -265,13 +269,6 @@
     <aliasesresolveinterval/>
     <maximumtableentries/>
     <backup>
-      <scp version="0.1.0">
-        <enabled>0</enabled>
-        <hostname/>
-        <port>22</port>
-        <username/>
-        <remotedirectory>OPNsense-Backup</remotedirectory>
-      </scp>
       <nextcloud version="1.0.0">
         <enabled>0</enabled>
         <url/>
@@ -293,16 +290,28 @@
       <ipaddrv6>fd00:5::6</ipaddrv6>
       <subnetv6>64</subnetv6>
     </lan>
-    <opt1>
-      <if>em2</if>
-      <descr>WAN2</descr>
+    <lo0>
+      <internal_dynamic>1</internal_dynamic>
+      <descr>Loopback</descr>
+      <enable>1</enable>
+      <if>lo0</if>
+      <ipaddr>127.0.0.1</ipaddr>
+      <ipaddrv6>::1</ipaddrv6>
+      <subnet>8</subnet>
+      <subnetv6>128</subnetv6>
+      <type>none</type>
+      <virtual>1</virtual>
+    </lo0>
+    <opt2>
+      <if>em1</if>
+      <descr>WAN1</descr>
       <enable>1</enable>
       <spoofmac/>
-      <ipaddr>10.4.1.6</ipaddr>
+      <ipaddr>198.51.100.6</ipaddr>
       <subnet>24</subnet>
-      <ipaddrv6>fd00:4::6</ipaddrv6>
+      <ipaddrv6>2001:db8:1::6</ipaddrv6>
       <subnetv6>64</subnetv6>
-    </opt1>
+    </opt2>
   </interfaces>
   <dhcpd>
     <lan>
@@ -328,7 +337,34 @@
       <mode>automatic</mode>
     </outbound>
   </nat>
-  <filter/>
+  <filter>
+    <rule>
+      <type>pass</type>
+      <interface>opt2</interface>
+      <ipprotocol>inet</ipprotocol>
+      <statetype>keep state</statetype>
+      <descr>ping</descr>
+      <direction>in</direction>
+      <quick>1</quick>
+      <protocol>icmp</protocol>
+      <source>
+        <any>1</any>
+      </source>
+      <destination>
+        <network>opt2ip</network>
+      </destination>
+      <updated>
+        <username>root@10.5.1.213</username>
+        <time>1613507954.1393</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </updated>
+      <created>
+        <username>root@10.5.1.213</username>
+        <time>1613507954.1393</time>
+        <description>/firewall_rules_edit.php made changes</description>
+      </created>
+    </rule>
+  </filter>
   <rrd/>
   <load_balancer>
     <monitor_type>
@@ -378,16 +414,58 @@
     <column_count>2</column_count>
   </widgets>
   <revision>
-    <username>root@10.5.1.213</username>
-    <time>1543604709.983</time>
-    <description>/api/routes/routes/setroute/c31166b8-6488-4ead-add3-0930a4213f59 made changes</description>
+    <username>(system)</username>
+    <time>1613587650.4801</time>
+    <description>/usr/local/opnsense/mvc/script/run_migrations.php made changes</description>
   </revision>
   <OPNsense>
     <captiveportal version="1.0.0">
       <zones/>
       <templates/>
     </captiveportal>
-    <Netflow version="1.0.0">
+    <Firewall>
+      <Alias version="1.0.0">
+        <geoip>
+          <url/>
+        </geoip>
+        <aliases/>
+      </Alias>
+      <Category version="1.0.0">
+        <categories/>
+      </Category>
+    </Firewall>
+    <OpenVPNExport version="0.0.1">
+      <servers/>
+    </OpenVPNExport>
+    <Interfaces>
+      <vxlans version="1.0.1"/>
+      <loopbacks version="1.0.0"/>
+    </Interfaces>
+    <unboundplus>
+      <miscellaneous version="0.0.2">
+        <privatedomain/>
+        <dotservers/>
+      </miscellaneous>
+      <dnsbl version="0.0.1">
+        <service_enabled/>
+        <enabled>0</enabled>
+        <type/>
+        <lists/>
+        <whitelists/>
+      </dnsbl>
+    </unboundplus>
+    <TrafficShaper version="1.0.3">
+      <pipes/>
+      <queues/>
+      <rules/>
+    </TrafficShaper>
+    <Syslog version="1.0.0">
+      <general>
+        <enabled>1</enabled>
+      </general>
+      <destinations/>
+    </Syslog>
+    <Netflow version="1.0.1">
       <capture>
         <interfaces/>
         <egress_only>wan</egress_only>
@@ -397,36 +475,10 @@
       <collect>
         <enable>0</enable>
       </collect>
+      <activeTimeout>1800</activeTimeout>
+      <inactiveTimeout>15</inactiveTimeout>
     </Netflow>
-    <cron version="1.0.1">
-      <jobs/>
-    </cron>
-    <Firewall>
-      <Alias version="1.0.0">
-        <aliases/>
-      </Alias>
-    </Firewall>
-    <IDS version="1.0.1">
-      <rules/>
-      <userDefinedRules/>
-      <files/>
-      <fileTags/>
-      <general>
-        <enabled>0</enabled>
-        <ips>0</ips>
-        <promisc>0</promisc>
-        <interfaces>wan</interfaces>
-        <homenet>192.168.0.0/16,10.0.0.0/8,172.16.0.0/12</homenet>
-        <defaultPacketSize/>
-        <UpdateCron/>
-        <AlertLogrotate>W0D23</AlertLogrotate>
-        <AlertSaveLogs>4</AlertSaveLogs>
-        <MPMAlgo>ac</MPMAlgo>
-        <syslog>0</syslog>
-        <LogPayload>0</LogPayload>
-      </general>
-    </IDS>
-    <monit version="1.0.6">
+    <monit version="1.0.9">
       <general>
         <enabled>0</enabled>
         <interval>120</interval>
@@ -444,14 +496,14 @@
         <eventqueueSlots/>
         <httpdEnabled>0</httpdEnabled>
         <httpdUsername>root</httpdUsername>
-        <httpdPassword>hJNkHnCPAFKbtM91CSisinm2</httpdPassword>
+        <httpdPassword>DFcNd4amNk53O7qhwRSAolplz</httpdPassword>
         <httpdPort>2812</httpdPort>
         <httpdAllow/>
         <mmonitUrl/>
         <mmonitTimeout>5</mmonitTimeout>
         <mmonitRegisterCredentials>1</mmonitRegisterCredentials>
       </general>
-      <alert uuid="66d41d6a-69e0-45d7-8e05-02354c5650f4">
+      <alert uuid="f8c7ab82-b753-4805-a4c0-a675ffd28ccc">
         <enabled>0</enabled>
         <recipient>root@localhost.local</recipient>
         <noton>0</noton>
@@ -460,9 +512,10 @@
         <reminder>10</reminder>
         <description/>
       </alert>
-      <service uuid="31dc5fdc-6b42-494a-85aa-e3ee6b2d98b5">
+      <service uuid="31b4063e-9cc4-4f84-b25c-c1c89e7fbd1d">
         <enabled>1</enabled>
         <name>$HOST</name>
+        <description/>
         <type>system</type>
         <pidfile/>
         <match/>
@@ -472,11 +525,13 @@
         <interface/>
         <start/>
         <stop/>
-        <tests>b7c05747-1309-496c-bdfe-b5dc57634305,e7167e77-6a3a-421f-894a-e9c726fd64e1,007b4d16-3193-4ccc-891f-8fe44e99a012,9c633a6d-28da-43db-8e49-1e3d6b113352</tests>
+        <tests>a1c93168-948f-49a6-beca-c7bb19c2b1ec,0be2f4ee-e9d3-4eff-9910-d0f72b72761f,39cc545a-ed26-4125-b225-ea4606b62d9f,6b9ebc71-b1f4-438a-bb9c-65a3a83c463c</tests>
+        <depends/>
       </service>
-      <service uuid="302a9f2c-6492-428a-a1df-715929be8204">
+      <service uuid="1e579054-1fb2-4e49-8989-376c81a8db4b">
         <enabled>1</enabled>
         <name>RootFs</name>
+        <description/>
         <type>filesystem</type>
         <pidfile/>
         <match/>
@@ -486,11 +541,13 @@
         <interface/>
         <start/>
         <stop/>
-        <tests>56a0b427-8c25-4c95-a400-e40690596aaa</tests>
+        <tests>6a3e87bb-4f96-430d-8bd1-6663b4fc5fef</tests>
+        <depends/>
       </service>
-      <service uuid="210f2a44-b33d-4656-a535-c977336fc9fb">
+      <service uuid="f2c258c0-3b1c-4c0b-a35c-72c39400f5e6">
         <enabled>0</enabled>
         <name>carp_status_change</name>
+        <description/>
         <type>custom</type>
         <pidfile/>
         <match/>
@@ -500,75 +557,143 @@
         <interface/>
         <start/>
         <stop/>
-        <tests>4e1ba7ef-f5e8-4a66-becb-814bc2ad39fe</tests>
+        <tests>3833a559-8fd0-46ad-8e8a-7d5420401cf8</tests>
+        <depends/>
       </service>
-      <test uuid="0653a9ed-dde4-40c4-9f14-3f2c633a907d">
+      <service uuid="d7de284b-3170-4e69-b7d2-cee5052a1ddb">
+        <enabled>0</enabled>
+        <name>gateway_alert</name>
+        <description/>
+        <type>custom</type>
+        <pidfile/>
+        <match/>
+        <path>/usr/local/opnsense/scripts/OPNsense/Monit/gateway_alert</path>
+        <timeout>300</timeout>
+        <address/>
+        <interface/>
+        <start/>
+        <stop/>
+        <tests>afc7bb26-6cc5-4228-8008-7d7d054ebd2a</tests>
+        <depends/>
+      </service>
+      <test uuid="e3b07e09-9ef9-4c89-aea5-f957528f1a2d">
         <name>Ping</name>
+        <type>NetworkPing</type>
         <condition>failed ping</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="fcdf3ce7-78c2-4164-a26c-01a48e0694e2">
+      <test uuid="8ac38ec4-d632-4c35-bad4-a19a30c93210">
         <name>NetworkLink</name>
+        <type>NetworkInterface</type>
         <condition>failed link</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="42adebdb-7d68-4eaa-a34e-fb5f7081d550">
+      <test uuid="b8d008da-6029-40e8-8067-57eb16d1622f">
         <name>NetworkSaturation</name>
+        <type>NetworkInterface</type>
         <condition>saturation is greater than 75%</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="b7c05747-1309-496c-bdfe-b5dc57634305">
+      <test uuid="a1c93168-948f-49a6-beca-c7bb19c2b1ec">
         <name>MemoryUsage</name>
+        <type>SystemResource</type>
         <condition>memory usage is greater than 75%</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="e7167e77-6a3a-421f-894a-e9c726fd64e1">
+      <test uuid="0be2f4ee-e9d3-4eff-9910-d0f72b72761f">
         <name>CPUUsage</name>
+        <type>SystemResource</type>
         <condition>cpu usage is greater than 75%</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="007b4d16-3193-4ccc-891f-8fe44e99a012">
+      <test uuid="39cc545a-ed26-4125-b225-ea4606b62d9f">
         <name>LoadAvg1</name>
+        <type>SystemResource</type>
         <condition>loadavg (1min) is greater than 2</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="9c633a6d-28da-43db-8e49-1e3d6b113352">
+      <test uuid="6b9ebc71-b1f4-438a-bb9c-65a3a83c463c">
         <name>LoadAvg5</name>
+        <type>SystemResource</type>
         <condition>loadavg (5min) is greater than 1.5</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="2fccf5eb-7038-4bcd-960e-155ba7836b47">
+      <test uuid="98784b92-51bd-4459-9ba6-bd2fecad1633">
         <name>LoadAvg15</name>
+        <type>SystemResource</type>
         <condition>loadavg (15min) is greater than 1</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="56a0b427-8c25-4c95-a400-e40690596aaa">
+      <test uuid="6a3e87bb-4f96-430d-8bd1-6663b4fc5fef">
         <name>SpaceUsage</name>
+        <type>SpaceUsage</type>
         <condition>space usage is greater than 75%</condition>
         <action>alert</action>
         <path/>
       </test>
-      <test uuid="4e1ba7ef-f5e8-4a66-becb-814bc2ad39fe">
+      <test uuid="3833a559-8fd0-46ad-8e8a-7d5420401cf8">
         <name>ChangedStatus</name>
+        <type>ProgramStatus</type>
         <condition>changed status</condition>
         <action>alert</action>
         <path/>
       </test>
+      <test uuid="afc7bb26-6cc5-4228-8008-7d7d054ebd2a">
+        <name>NonZeroStatus</name>
+        <type>ProgramStatus</type>
+        <condition>status != 0</condition>
+        <action>alert</action>
+        <path/>
+      </test>
     </monit>
-    <OpenVPNExport version="0.0.1">
-      <servers/>
-    </OpenVPNExport>
-    <proxy version="1.0.1">
+    <cron version="1.0.2">
+      <jobs/>
+    </cron>
+    <IPsec version="1.0.0">
+      <general>
+        <enabled/>
+      </general>
+      <keyPairs/>
+    </IPsec>
+    <IDS version="1.0.6">
+      <rules/>
+      <policies/>
+      <userDefinedRules/>
+      <files/>
+      <fileTags/>
       <general>
         <enabled>0</enabled>
+        <ips>0</ips>
+        <promisc>0</promisc>
+        <interfaces>wan</interfaces>
+        <homenet>192.168.0.0/16,10.0.0.0/8,172.16.0.0/12</homenet>
+        <defaultPacketSize/>
+        <UpdateCron/>
+        <AlertLogrotate>W0D23</AlertLogrotate>
+        <AlertSaveLogs>4</AlertSaveLogs>
+        <MPMAlgo>ac</MPMAlgo>
+        <detect>
+          <Profile>medium</Profile>
+          <toclient_groups/>
+          <toserver_groups/>
+        </detect>
+        <syslog>0</syslog>
+        <syslog_eve>0</syslog_eve>
+        <LogPayload>0</LogPayload>
+      </general>
+    </IDS>
+    <proxy version="1.0.4">
+      <general>
+        <enabled>0</enabled>
+        <error_pages>opnsense</error_pages>
         <icpPort/>
         <logging>
           <enable>
@@ -582,8 +707,10 @@
         <dnsV4First>0</dnsV4First>
         <forwardedForHandling>on</forwardedForHandling>
         <uriWhitespaceHandling>strip</uriWhitespaceHandling>
+        <enablePinger>1</enablePinger>
         <useViaHeader>1</useViaHeader>
         <suppressVersion>0</suppressVersion>
+        <connecttimeout/>
         <VisibleEmail>admin@localhost.local</VisibleEmail>
         <VisibleHostname>localhost</VisibleHostname>
         <cache>
@@ -606,6 +733,16 @@
           <OverallBandwidthTrotteling>1024</OverallBandwidthTrotteling>
           <perHostTrotteling>256</perHostTrotteling>
         </traffic>
+        <parentproxy>
+          <enabled>0</enabled>
+          <host/>
+          <enableauth>0</enableauth>
+          <user>username</user>
+          <password>password</password>
+          <port/>
+          <localdomains/>
+          <localips/>
+        </parentproxy>
       </general>
       <forward>
         <interfaces>lan</interfaces>
@@ -633,6 +770,8 @@
           <blackList/>
           <browser/>
           <mimeType/>
+          <googleapps/>
+          <youtube/>
           <safePorts>80:http,21:ftp,443:https,70:gopher,210:wais,1025-65535:unregistered ports,280:http-mgmt,488:gss-http,591:filemaker,777:multiling http</safePorts>
           <sslPorts>443:https</sslPorts>
           <remoteACLs>
@@ -655,18 +794,17 @@
         </icap>
         <authentication>
           <method/>
+          <authEnforceGroup/>
           <realm>OPNsense proxy authentication</realm>
           <credentialsttl>2</credentialsttl>
           <children>5</children>
         </authentication>
       </forward>
       <pac/>
+      <error_pages>
+        <template/>
+      </error_pages>
     </proxy>
-    <TrafficShaper version="1.0.2">
-      <pipes/>
-      <queues/>
-      <rules/>
-    </TrafficShaper>
   </OPNsense>
   <cert>
     <refid>593c39a605ac3</refid>
@@ -690,59 +828,31 @@
       <defaultgw>1</defaultgw>
     </gateway_item>
     <gateway_item>
-      <interface>opt1</interface>
-      <gateway>fd00:4::3</gateway>
-      <name>RT_3_ip6</name>
-      <weight>1</weight>
-      <ipprotocol>inet6</ipprotocol>
-      <interval/>
-      <descr/>
-      <avg_delay_samples/>
-      <avg_loss_samples/>
-      <avg_loss_delay_samples/>
-      <monitor_disable>1</monitor_disable>
-    </gateway_item>
-    <gateway_item>
-      <interface>opt1</interface>
-      <gateway>fd00:4::1</gateway>
-      <name>RT_1_WAN_2_ip6</name>
-      <weight>1</weight>
-      <ipprotocol>inet6</ipprotocol>
-      <interval/>
-      <descr/>
-      <avg_delay_samples/>
-      <avg_loss_samples/>
-      <avg_loss_delay_samples/>
-      <monitor_disable>1</monitor_disable>
-    </gateway_item>
-    <gateway_item>
-      <interface>opt1</interface>
-      <gateway>10.4.1.3</gateway>
-      <name>RT_3_ip4</name>
+      <interface>opt2</interface>
+      <gateway>198.51.100.1</gateway>
+      <name>RT1_IP4</name>
+      <priority>255</priority>
       <weight>1</weight>
       <ipprotocol>inet</ipprotocol>
       <interval/>
       <descr/>
-      <avg_delay_samples/>
-      <avg_loss_samples/>
-      <avg_loss_delay_samples/>
       <monitor_disable>1</monitor_disable>
     </gateway_item>
     <gateway_item>
-      <interface>opt1</interface>
-      <gateway>10.4.1.1</gateway>
-      <name>RT_1_WAN_2_ip4</name>
+      <interface>opt2</interface>
+      <gateway>2001:db8:1::1</gateway>
+      <name>RT1_IP6</name>
+      <priority>255</priority>
       <weight>1</weight>
-      <ipprotocol>inet</ipprotocol>
+      <ipprotocol>inet6</ipprotocol>
       <interval/>
       <descr/>
-      <avg_delay_samples/>
-      <avg_loss_samples/>
-      <avg_loss_delay_samples/>
       <monitor_disable>1</monitor_disable>
     </gateway_item>
   </gateways>
-  <ppps/>
+  <ppps>
+    <ppp/>
+  </ppps>
   <notifications>
     <growl>
       <ipaddress/>
@@ -764,29 +874,32 @@
   <ntpd>
     <interface>lan</interface>
   </ntpd>
+  <virtualip>
+    <vip/>
+  </virtualip>
   <staticroutes version="1.0.0">
-    <route uuid="6e48b739-8b83-4183-9d87-84bd9beede0c">
+    <route uuid="dbd382c2-e4af-4758-8089-9d15ba9dc5dd">
       <network>fd00:1::/64</network>
-      <gateway>RT_1_WAN_2_ip6</gateway>
-      <descr>Site-1</descr>
+      <gateway>RT1_IP6</gateway>
+      <descr>Standort-1</descr>
       <disabled>0</disabled>
     </route>
-    <route uuid="c31166b8-6488-4ead-add3-0930a4213f59">
-      <network>fd00:2::/64</network>
-      <gateway>RT_3_ip6</gateway>
-      <descr>Site-2</descr>
-      <disabled>0</disabled>
-    </route>
-    <route uuid="377d9d7a-466b-4437-9063-d48b607c07d5">
+    <route uuid="d1757375-189b-49b2-97c6-42f28e49c16a">
       <network>10.1.1.0/24</network>
-      <gateway>RT_1_WAN_2_ip4</gateway>
-      <descr>Site-1</descr>
+      <gateway>RT1_IP4</gateway>
+      <descr>Standort-1</descr>
       <disabled>0</disabled>
     </route>
-    <route uuid="25bb9bf3-9fbb-4c98-b2d6-2d3207b8a359">
-      <network>10.2.1.0/24</network>
-      <gateway>RT_3_ip4</gateway>
-      <descr>Site-2</descr>
+    <route uuid="2a66edd4-d6bd-4160-9299-d67dc0ad42af">
+      <network>10.4.1.0/24</network>
+      <gateway>RT1_IP4</gateway>
+      <descr>DMZ</descr>
+      <disabled>0</disabled>
+    </route>
+    <route uuid="9a4506ce-6f25-4524-bca7-f36f1b518da4">
+      <network>fd00:4::/64</network>
+      <gateway>RT1_IP6</gateway>
+      <descr>DMZ</descr>
       <disabled>0</disabled>
     </route>
   </staticroutes>
