@@ -2,7 +2,14 @@
 
 ## Part 1: For Beginners
 
-#### 1. Lab network
+#### 1. Quickstart
+* What is OPNsense?
+* IP address
+* Setup
+* Overview
+* Summary
+
+#### 2. Lab network
 * Resources
 * Virtualization
 * Hardware
@@ -12,42 +19,35 @@
 * Lab server
 * Utilization
 
-#### 2. Platform
+#### 3. Platform
 * Preparation
 * VMware
 * VirtualBox
 * Hardware
 
-#### 3. Installation
-* Operating System
+#### 4. Installation
+* Operating system
 * Storage
-* Post-Installation Tasks
+* Post-installation tasks
 
-#### 4. Initial setup
+#### 5. Initial setup
 * Initial setup
 * Secondary setup
 * Routing
 * Final testing
 * Summary
 
-#### 5. IP Version 6
-* Crash course
-* Lab setup
-* Addresses and routes
-* Clients
-* Connections
-* Summary
-
 
 ## Part 2: For Intermediates
 
 #### 6. Firewall
-* OPNsense as firewall
+* OPNsense as a firewall
 * Lab setup
 * Firewall rules
 * Logging
 * Throughput
-* Best Practice
+* Best practice
+* Additional filter
 * Technical background
 * Order of processing
 * Troubleshooting
@@ -82,10 +82,10 @@
 * Security
 * Lab setup
 * Connection setup
-* Address Translation
+* Address translation
 * Dead Peer Detection
 * IPv6
-* VPN Throughput
+* VPN throughput
 * Troubleshooting
 * Technical background
 * Outlook
@@ -128,8 +128,8 @@
 * Lab setup
 * Explicit Proxy
 * Proxy cluster
-* SSL Inspection
-* Transparent Proxy
+* TLS Inspection
+* Transparent proxy
 * Technical Background
 * Limitations
 * Outlook
@@ -140,7 +140,10 @@
 * Lab setup
 * Microsoft Server
 * Directory-as-a-Service
+* Two-factor authentication
 * Troubleshooting
+* Technical background
+* Summary
 
 
 ## Part 4: For Hackers
@@ -164,7 +167,7 @@
 * LAN adapters
 * DNS and DHCP
 * IPv4 with Address Translation
-* IPv6 with Prefix Delegation
+* IPv6 with prefix delegation
 * Firewall
 * Technical background
 * Summary
@@ -177,7 +180,6 @@
 * Activate IDS
 * Activate IPS
 * Transparent IDS
-* GeoIP
 * Technical background
 * Summary
 
@@ -201,9 +203,9 @@
 ## Part 5: For Admins
 
 #### 21. Best Practice
-* Factory Reset
+* Factory reset
 * Benchmark throughput
-* SSH Login without password
+* SSH login without password
 * Password reset
 
 #### 22. Configuration
@@ -237,8 +239,10 @@
 
 ## Appendix
 
-#### A. Editing Files in FreeBSD
+#### A. IP Version 6
 
-#### B. Pattern Matching
+#### B. Editing Files in FreeBSD
 
-#### C. Bonus Material
+#### C. Pattern Matching
+
+#### D. Bonus Material

@@ -1,10 +1,10 @@
 # Practical OPNsense
 
-Simple packet filters are becoming a thing of the past. Even the open-source domain is moving towards Next-Generation Firewalls. And [OPNsense](https://opnsense.org/) is a top player when it comes to intrusion detection, application control, web filtering, and anti-virus.
+Simple packet filters are becoming a thing of the past. Even the open-source domain is moving towards Next-Generation Firewalls. [OPNsense](https://opnsense.org/) is a top player when it comes to intrusion detection, application control, web filtering, and Antivirus.
 
-The third edition of this book is available since 2021 as printed book and e-book.
+__The fourth edition of this book is available since May 2023 as printed book.__
 
-__The fourth edition is expected in June 2023.__
+__The e-book is expected in June 2023.__
 
 Take a look into the [table of contents](Table_of_contents.md)
 
@@ -13,11 +13,11 @@ Take a look into the [table of contents](Table_of_contents.md)
 
 ![Cover image](images/brickwall_256px.png)
 
-No network is too insignificant to be spared by an attacker. Even home networks, washing machines, and smartwatches are threatened and require a secure environment.
+No network is too insignificant to be spared by an attacker. Even home networks, washing machines, and smartwatches are under threat and require a secure environment.
 
-Firewalls are a component of the security concept. They protect against known and new threats to computers and networks. A firewall offers the highest level of protection if its functions are known, its operation is simple, and it is ideally positioned in the surrounding infrastructure. __OPNsense__ accepts the challenge and meets these criteria in different ways. This book is the ideal companion for understanding, installing and setting up an __OPNsense__ firewall.
+Firewalls are a component of the security concept. They protect against known and emerging threats to computers and networks. A firewall offers the highest level of protection if its functions are known, its operation is simple, and it is ideally positioned in the surrounding infrastructure. __OPNsense__ accepts the challenge and meets these criteria in different ways. This book is the ideal companion for understanding, installing, and setting up an __OPNsense__ firewall.
 
-Each chapter explains a real-world situation, describes the theoretical fundamentals, and presents a laboratory experiment for better understanding. Finally, it offers a solution using __OPNsense__ methods and knowledge from a technical background.
+Each chapter explains a real-world situation, describes the theoretical fundamentals, and presents a lab experiment for better understanding. Finally, it offers a solution using __OPNsense__ methods and knowledge with a technical standpoint.
 
 
 ## Get a taste
@@ -37,7 +37,7 @@ Almost all chapters use the same network layout and the same IPv4/IPv6 addresses
 
 * The [errata](errata.pdf) lists the mistakes in content and their correction.
 
-* Buy a copy of this book at [Amazon](https://www.amazon.com/Practical-OPNsense-Building-Enterprise-Firewalls/dp/3754302566) or [BoD](https://www.bod.de/buchshop/practical-opnsense-markus-stubbig-9783754302569)
+* Buy a copy of this book at [Amazon](https://amzn.to/3MHCdmV) (affiliate link) or [BoD](https://www.bod.de/buchshop/practical-opnsense-markus-stubbig-9783757805364)
 
 * Contact the author by [email](mailto:practical.opnsense@gmail.com)
 
