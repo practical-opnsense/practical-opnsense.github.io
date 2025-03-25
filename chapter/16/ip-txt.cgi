@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!c:/perl64/bin/perl.exe
 # [de] Sende die Verbindungsinformationen als Text an den aufrufenden Browser
 # [en] Send connection information in text format to the requesting web browser
 
