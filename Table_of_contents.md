@@ -219,6 +219,7 @@
 * Telegram
 * Firewall rules with category
 * Quick search
+* Snapshots
 
 #### 24. Application Programming Interface
 * How does the API work?
