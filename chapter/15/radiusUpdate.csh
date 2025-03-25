@@ -9,8 +9,8 @@
 
 # [de] Zugriff zur JumpCloud API
 # [en] Access the JumpCloud API
-set apiKey=7e2563b0cac47988cf8c0eec644da21385a12345
-set radiusId=5a04df3ffe73e29b568b6af3
+set apiKey=jca_5MsDUhMx37Y5ZTeDN5RZuH3ppTQfhb8c4pa1
+set radiusId=59fe206fb63f4b3053ce0e1a
 
 # [de] haben wir einen API-Schluessel?
 # [en] check if an API key is present
@@ -19,17 +19,22 @@ if ( "$apiKey" == "" ) then
   exit 1
 endif
 
-# [de] eigene oeffentliche IP-Adresse ermitteln
-# [en] get the public IP address of this host
+# [de] Eigene oeffentliche IP-Adresse ermitteln
+# [en] Get the public IP address of this host
 set newIp = `curl --silent https://api.ipify.org/`
 if ( $? != 0 ) then
   echo "Unable to determine newIp, exiting..."
   exit 2
 endif
 
-# [de] hole die aktuelle IP von der JumpCloud API
-# [en] get the current IP address using the JumpCloud API
-curl --silent -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H "x-api-key: $apiKey" "https://console.jumpcloud.com/api/radiusservers/$radiusId" | json_pp -json_opt pretty > /tmp/current_ip.txt
+# [de] Hole die aktuelle IP-Adresse von der JumpCloud API
+# [en] Get the current IP address using the JumpCloud API
+curl --silent --request GET \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  --header "x-api-key: $apiKey" \
+  "https://console.jumpcloud.com/api/radiusservers/$radiusId" \
+  | json_pp -json_opt pretty > /tmp/current_ip.txt
 
 # [de] Wenn sich die IP-Adresse nicht veraendert hat, endet das Skript hier
 # [en] If the IP address hasn't changed, the script ends here
@@ -41,14 +46,14 @@ endif
 
 # [de] Neue IP-Adresse ins API-Kommando einbauen
 # [en] insert new IP address into the API command
-sed -i -e 's/"networkSourceIp".*/"networkSourceIp" : "'${newIp}'",/' /tmp/current_ip.txt
+sed -i '' 's/"networkSourceIp".*/"networkSourceIp" : "'${newIp}'",/' /tmp/current_ip.txt
 
-# [de] neue IP-Adresse bei JumpCloud hinterlegen
-# [en] upload the new IP address to JumpCloud
-curl -X PUT --silent \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -H "x-api-key: $apiKey" \
+# [de] Neue IP-Adresse bei JumpCloud hinterlegen
+# [en] Upload the new IP address to JumpCloud
+curl --silent --request PUT \
+  --header 'Content-Type: application/json' \
+  --header 'Accept: application/json' \
+  --header "x-api-key: $apiKey" \
   --output /dev/null --fail \
   --data @/tmp/current_ip.txt \
   "https://console.jumpcloud.com/api/radiusservers/$radiusId"
