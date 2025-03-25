@@ -7,5 +7,5 @@ done
 
 NEIGHBORS6=$(/usr/bin/netstat -6rn | grep UGS | awk '{ print $2 }')
 for NHR in $NEIGHBORS6 ; do
-  ndp $NHR >/dev/null  ||  ping6 -t1 -c1 -W1 $NHR >/dev/null
+  ndp $NHR >/dev/null  ||  ping -t1 -c1 -W1 $NHR >/dev/null
 done
