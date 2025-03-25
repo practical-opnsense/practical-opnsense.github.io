@@ -12,7 +12,7 @@ VBoxManage modifyvm RT-1 --description "OPNsense lab"
 VBoxManage modifyvm RT-1 --ostype "FreeBSD_64"
 VBoxManage modifyvm RT-1 --ioapic on
 
-# [en] set up network adapter
+# [en] configure network adapters
 # [de] Netzwerkkarten einrichten
 VBoxManage modifyvm RT-1 --nic1 bridged
 VBoxManage modifyvm RT-1 --bridgeadapter1 eth1
@@ -43,12 +43,12 @@ VBoxManage modifyvm RT-1 --macaddress5 001516010601
 # [en] CD drive (used during installation)
 # [de] CD-ROM Laufwerk (für Installation)
 VBoxManage storagectl RT-1 --name "IDE Controller" --add ide
-VBoxManage storageattach RT-1 --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium /data/vmware/images/OPNsense-23.1-OpenSSL-dvd-amd64.iso
+VBoxManage storageattach RT-1 --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium /data/vmware/images/OPNsense-25.1-dvd-amd64.iso
 
 # [en] hard disk
 # [de] Festplatte
 VBoxManage storagectl RT-1 --name "SATA Controller" --add sata
-VBoxManage createhd --filename "RT-1/RT-1.vdi" --size 6144 --format VDI --variant Fixed
+VBoxManage createhd --filename "RT-1/RT-1.vdi" --size 8192 --format VDI --variant Fixed
 VBoxManage storageattach RT-1 --storagectl "SATA Controller" --medium "RT-1/RT-1.vdi" --port 0 --type hdd
 
 # RDP-Konsole
